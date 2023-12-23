@@ -1,0 +1,6 @@
+#ifndef _OPENGL_EXAMPLE_HELLO_CPP_
+#define _OPENGL_EXAMPLE_HELLO_CPP_
+
+void hello();
+
+#endif // _OPENGL_EXAMPLE_HELLO_CPP_
