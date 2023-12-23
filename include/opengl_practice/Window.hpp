@@ -3,7 +3,10 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+
 #include <string>
+#include <vector>
+#include <functional>
 #include <string_view>
 
 namespace op
@@ -12,9 +15,6 @@ namespace op
     class Window
     {
 
-    private:
-        auto initWindow() -> void;
-
     public:
         Window(int width, int height, const std::string_view &title);
         ~Window();
@@ -22,7 +22,8 @@ namespace op
         auto isRunning() const -> bool;
         auto sync() const -> void;
 
-        // auto onResize() -> void;
+    private:
+        auto initWindow() -> void;
 
     private:
         int m_window_width{};
