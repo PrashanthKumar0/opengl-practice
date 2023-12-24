@@ -1,6 +1,6 @@
 ## opengl-practice
 
-> This project contains some basic reusable code for any opengl project. With this project i have no goal in mind , Its just me practicing What i learn and putting on github will ensure i write good code.
+> This project contains some basic reusable code for any opengl project. With this project i have no goal in mind , Its just me practicing What i learn and putting on github will ensure i write good code (Maybe).
 
 ## Building
 
