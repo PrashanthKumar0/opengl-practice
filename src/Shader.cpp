@@ -43,6 +43,9 @@ op::Shader::Shader(const std::string &shader_name)
     glAttachShader(m_program_id, fs_id);
     glLinkProgram(m_program_id);
 
+    glDeleteShader(vs_id);
+    glDeleteShader(fs_id);
+
     GLint success{};
 
     glGetProgramiv(m_program_id, GL_LINK_STATUS, &success);
@@ -53,6 +56,11 @@ op::Shader::Shader(const std::string &shader_name)
         glGetProgramInfoLog(m_program_id, 512, 0, infoLog);
         throw std::runtime_error(std::string{"Failed Linking Shader Program \n"} + infoLog);
     }
+}
+
+op::Shader::~Shader()
+{
+    glDeleteProgram(m_program_id);
 }
 
 auto op::Shader::createShader(GLenum shader_type, const char *shader_code) const -> GLuint

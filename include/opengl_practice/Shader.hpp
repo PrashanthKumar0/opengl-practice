@@ -12,6 +12,7 @@ namespace op
 
     public:
         Shader(const std::string &shader_name);
+        ~Shader();
 
     public:
         auto use() -> void;
