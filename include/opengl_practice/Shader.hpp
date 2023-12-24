@@ -25,13 +25,6 @@ namespace op
         static std::string s_shader_base_dir;
         GLuint m_program_id{};
     };
-
-    //
-    //
-    //
-    //
-    // ------------- initialize static member ---------
-
 }
 
 #endif // _OPENGL_SHADER_WINDOW_HPP_
