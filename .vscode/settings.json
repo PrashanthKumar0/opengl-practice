@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "__mutex_base": "cpp",
-        "__config": "cpp"
+        "__config": "cpp",
+        "string": "cpp"
     }
 }

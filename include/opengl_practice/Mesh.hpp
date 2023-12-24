@@ -7,8 +7,8 @@
 
 namespace op
 {
-    namespace
-    {
+    // namespace
+    // {
         struct vec3
         {
             GLfloat x{};
@@ -20,7 +20,7 @@ namespace op
         {
             vec3 Position{};
         };
-    }
+    // }
 
     class Mesh
     {

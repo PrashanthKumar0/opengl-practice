@@ -3,6 +3,10 @@ project(opengl_practice)
 file(GLOB main_files */main.cpp)
 
 
+
+message("---- ${CMAKE_CURRENT_SOURCE_DIR}/shaders -> ${CMAKE_CURRENT_BINARY_DIR}")
+file(COPY shaders DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 foreach(example_source_file ${main_files})
     string(REGEX REPLACE \\/ ";" example_source_file_path ${example_source_file})
     list(GET example_source_file_path -2 example_source_file_dirname)
