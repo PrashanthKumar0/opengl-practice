@@ -2,28 +2,19 @@
 #define _OPENGL_PRACTICE_MESH_HPP_
 
 #include <glad/glad.h>
-
+#include <glm/glm.hpp>
 #include <vector>
 
 namespace op
 {
-    // namespace
-    // {
-        struct vec3
-        {
-            GLfloat x{};
-            GLfloat y{};
-            GLfloat z{};
-        };
-
-        struct Vertex
-        {
-            vec3 Position{};
-        };
-    // }
-
     class Mesh
     {
+
+    public:
+        struct Vertex
+        {
+            glm::vec3 Position{};
+        };
 
     public:
         using Vertex_t = Vertex;
@@ -35,7 +26,7 @@ namespace op
 
     public:
         auto draw() -> void;
-        
+
     private:
         GLsizei m_num_indices{};
 

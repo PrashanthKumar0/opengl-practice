@@ -1,5 +1,6 @@
 #include "opengl_practice/Mesh.hpp"
 #include <vector>
+#include <glm/glm.hpp>
 
 op::Mesh::Mesh(std::vector<Vertex_t> &vertices, std::vector<Index_t> &indices)
     : m_num_indices(indices.size())
@@ -17,7 +18,7 @@ op::Mesh::Mesh(std::vector<Vertex_t> &vertices, std::vector<Index_t> &indices)
     glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex_t) * vertices.size(), &vertices[0], GL_STATIC_DRAW);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Index_t) * indices.size(), &indices[0], GL_STATIC_DRAW);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex_t), reinterpret_cast<void *>(offsetof(Vertex_t, Position) * sizeof(vec3)));
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex_t), reinterpret_cast<void *>(offsetof(Vertex_t, Position) * sizeof(glm::vec3)));
     glEnableVertexAttribArray(0);
 
     //------------------------------------------
