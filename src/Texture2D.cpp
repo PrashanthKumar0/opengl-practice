@@ -56,7 +56,7 @@ op::Texture2D::Texture2D(const std::string &filename, bool use_path)
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-auto op::Texture2D::bind(int slot) -> void
+auto op::Texture2D::bind(int slot) const -> void
 {
     glActiveTexture(GL_TEXTURE0 + slot);
     glBindTexture(GL_TEXTURE_2D, m_texture_id);
@@ -67,7 +67,19 @@ op::Texture2D::~Texture2D()
     glDeleteTextures(1, &m_texture_id);
 }
 
-// static auto op::Texture2D::setTextureDir(std::string &new_shader_base_dir) -> void;
+auto op::Texture2D::setTextureDir(std::string &new_shader_base_dir) -> void
+{
+    if (
+        (*(new_shader_base_dir.end()) == '/') ||
+        (*(new_shader_base_dir.end()) == '\\'))
+    {
+        s_texture_base_dir = new_shader_base_dir;
+    }
+    else
+    {
+        s_texture_base_dir = new_shader_base_dir + "/";
+    }
+}
 
 auto op::Texture2D::getId() const -> GLuint
 {
