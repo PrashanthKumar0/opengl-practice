@@ -10,15 +10,15 @@ std::string op::Shader::s_shader_base_dir{"./res/shaders/"};
 
 op::Shader::Shader(const std::string &shader_name)
 {
-    std::string vs_file_path{s_shader_base_dir + shader_name + ".vs"};
-    std::string fs_file_path{s_shader_base_dir + shader_name + ".fs"};
+    std::string vs_file_path{s_shader_base_dir + shader_name + "/" + shader_name + ".vs"};
+    std::string fs_file_path{s_shader_base_dir + shader_name + "/" + shader_name + ".fs"};
 
     std::fstream vs_file{vs_file_path};
 
     if (!vs_file.is_open())
         throw std::runtime_error("vertex shader file " + vs_file_path + " doesn\'t exist.");
 
-    std::fstream fs_file{s_shader_base_dir + shader_name + ".fs"};
+    std::fstream fs_file{fs_file_path};
 
     if (!fs_file.is_open())
         throw std::runtime_error("fragment shader file " + fs_file_path + " doesn\'t exist.");
@@ -99,6 +99,12 @@ auto op::Shader::getShaderTypeString(GLenum shader_type) const -> std::string
 auto op::Shader::use() -> void
 {
     glUseProgram(m_program_id);
+}
+
+auto op::Shader::set(const std::string &p_name, GLint p_value) const -> void
+{
+    GLint uniform_location{glGetUniformLocation(m_program_id, p_name.c_str())};
+    glUniform1i(uniform_location, p_value);
 }
 
 auto op::Shader::setShaderDir(const std::string &shader_base_dir) -> void

@@ -1,8 +1,10 @@
-#ifndef _OPENGL_SHADER_WINDOW_HPP_
-#define _OPENGL_SHADER_WINDOW_HPP_
+#ifndef _OPENGL_PRACTICE_SHADER_HPP_
+#define _OPENGL_PRACTICE_SHADER_HPP_
 
 #include <glad/glad.h>
 #include <string>
+
+#include "opengl_practice/Texture2D.hpp"
 
 namespace op
 {
@@ -16,6 +18,7 @@ namespace op
 
     public:
         auto use() -> void;
+        auto set(const std::string &p_name, GLint p_value) const -> void;
         static auto setShaderDir(const std::string &shader_base_dir) -> void;
 
     private:
@@ -28,4 +31,4 @@ namespace op
     };
 }
 
-#endif // _OPENGL_SHADER_WINDOW_HPP_
+#endif // _OPENGL_PRACTICE_SHADER_HPP_
