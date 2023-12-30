@@ -3,6 +3,7 @@
 
 #include <glad/glad.h>
 #include <string>
+#include <glm/glm.hpp>
 
 #include "opengl_practice/Texture2D.hpp"
 
@@ -19,6 +20,10 @@ namespace op
     public:
         auto use() -> void;
         auto set(const std::string &p_name, GLint p_value) const -> void;
+        auto set(const std::string &p_name, const GLfloat p_value) const -> void;
+        auto set(const std::string &p_name, const glm::mat4& p_value) const -> void;
+        auto set(const std::string &p_name, const glm::vec3& p_value) const -> void;
+
         static auto setShaderDir(const std::string &shader_base_dir) -> void;
 
     private:

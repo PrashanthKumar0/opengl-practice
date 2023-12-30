@@ -1,4 +1,5 @@
 #include <glad/glad.h>
+#include <glm/glm.hpp>
 
 #include "opengl_practice/Shader.hpp"
 
@@ -105,6 +106,24 @@ auto op::Shader::set(const std::string &p_name, GLint p_value) const -> void
 {
     GLint uniform_location{glGetUniformLocation(m_program_id, p_name.c_str())};
     glUniform1i(uniform_location, p_value);
+}
+
+auto op::Shader::set(const std::string &p_name, const GLfloat p_value) const -> void
+{
+    GLint uniform_location{glGetUniformLocation(m_program_id, p_name.c_str())};
+    glUniform1f(uniform_location, p_value);
+}
+
+auto op::Shader::set(const std::string &p_name, const glm::mat4 &p_value) const -> void
+{
+    GLint uniform_location{glGetUniformLocation(m_program_id, p_name.c_str())};
+    glUniformMatrix4fv(uniform_location, 1, GL_FALSE, &(p_value[0][0]));
+}
+
+auto op::Shader::set(const std::string &p_name, const glm::vec3 &p_value) const -> void
+{
+    GLint uniform_location{glGetUniformLocation(m_program_id, p_name.c_str())};
+    glUniform3fv(uniform_location, 1, &p_value[0]);
 }
 
 auto op::Shader::setShaderDir(const std::string &shader_base_dir) -> void
