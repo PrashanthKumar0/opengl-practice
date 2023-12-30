@@ -6,7 +6,7 @@
 #include <fstream>
 #include <stdexcept>
 
-std::string op::Shader::s_shader_base_dir{"./shaders/"};
+std::string op::Shader::s_shader_base_dir{"./res/shaders/"};
 
 op::Shader::Shader(const std::string &shader_name)
 {

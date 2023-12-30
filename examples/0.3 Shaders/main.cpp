@@ -20,7 +20,7 @@ int main()
 
     // Shader relative path with respect to
     // build target directory of "0.3 Shaders" directory
-    op::Shader::setShaderDir("./shaders");
+    op::Shader::setShaderDir("./res/shaders");
     op::Shader flatColorShader{"flatColorShader"};
 
     glViewport(0, 0, window_width, window_height);
