@@ -11,3 +11,6 @@ add_subdirectory(glm)
 
 # add lib_stb
 add_subdirectory(lib_stb)
+
+# add freetype
+add_subdirectory(freetype)

@@ -15,7 +15,7 @@ namespace op
         ~Texture2D();
 
     public:
-        static auto setTextureDir(std::string &new_shader_base_dir) -> void;
+        static auto setTextureDir(const std::string &new_shader_base_dir) -> void;
         auto getId() const -> GLuint;
         auto bind(int slot = 0) const -> void;
 

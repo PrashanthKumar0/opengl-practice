@@ -7,3 +7,6 @@
 [submodule "vendor/lib_stb/stb"]
 	path = vendor/lib_stb/stb
 	url = https://github.com/nothings/stb/
+[submodule "vendor/freetype"]
+	path = vendor/freetype
+	url = https://gitlab.freedesktop.org/freetype/freetype
