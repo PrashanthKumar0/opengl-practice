@@ -23,7 +23,7 @@ namespace op
         using Index_t = GLuint;
 
     public:
-        Mesh(std::vector<Vertex_t> &vertices, std::vector<Index_t> &indices);
+        Mesh(const std::vector<Vertex_t> &vertices,const std::vector<Index_t> &indices);
         ~Mesh();
 
     public:

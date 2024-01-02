@@ -1,6 +1,7 @@
 project(opengl_practice)
 
-file(GLOB main_files */main.cpp)
+# file(GLOB main_files */main.cpp)
+file(GLOB main_files "7.1 Font/main.cpp")
 
 
 

@@ -97,7 +97,7 @@ auto op::Shader::getShaderTypeString(GLenum shader_type) const -> std::string
     }
 }
 
-auto op::Shader::use() -> void
+auto op::Shader::use() const -> void
 {
     glUseProgram(m_program_id);
 }

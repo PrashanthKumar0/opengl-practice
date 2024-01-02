@@ -18,7 +18,7 @@ namespace op
         ~Shader();
 
     public:
-        auto use() -> void;
+        auto use() const -> void;
         auto set(const std::string &p_name, GLint p_value) const -> void;
         auto set(const std::string &p_name, const GLfloat p_value) const -> void;
         auto set(const std::string &p_name, const glm::mat4& p_value) const -> void;

@@ -2,7 +2,7 @@
 #include <vector>
 #include <glm/glm.hpp>
 
-op::Mesh::Mesh(std::vector<Vertex_t> &vertices, std::vector<Index_t> &indices)
+op::Mesh::Mesh(const std::vector<Vertex_t> &vertices,const std::vector<Index_t> &indices)
     : m_num_indices(indices.size())
 {
     glGenBuffers(1, &m_VBO);
